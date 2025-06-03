@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px 60px 0 60px;
+    }
+
+    .profile-picture {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    .profile-details {
+      flex: 1;
+    }
+
+    .big-text {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-details">
+      <br><br>
+      <br><br>
+      <p class="big-text">{{ user.name }}</p>
+      <p class="big-text">{{ age }} Years Old</p>
+      <p class="big-text">{{ user.address }}</p>
+    </div>
+    <div class="profile-image">
+      <img src="{{ user.image_url }}" alt="Profile Picture" class="profile-picture">
+    </div>
+  </div>
+</body>
+</html>

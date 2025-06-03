@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .register-page-container {
+      padding: 40px 60px; /* space from top-left */
+    }
+
+    .register-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .register-group label {
+      width: 140px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .register-group input[type="text"],
+    .register-group input[type="password"],
+    .register-group input[type="date"] {
+      width: 350px;
+      padding: 12px;
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .register-group input[type="file"] {
+      font-size: 1rem;
+      padding: 5px;
+      border: none;
+    }
+
+    .register-button-container {
+      margin-left: 520px;
+      margin-top: 15px;
+    }
+
+    .register-button {
+      width: 180px;
+      padding: 12px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .register-button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      color: red;
+      margin-left: 200px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-page-container">
+    <form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data">
+      <div class="register-group">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image">
+      </div>
+      <div class="register-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="register-group">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+      </div>
+      <div class="register-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+      </div>
+      <div class="register-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="register-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <p class="message">{{ message }}</p>
+
+      <div class="register-button-container">
+        <button type="submit" class="register-button">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

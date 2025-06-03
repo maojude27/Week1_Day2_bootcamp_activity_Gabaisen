@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="login-page-container">
+        <div class="login-form-box">
+            <form method="POST" action="{{ url_for('login') }}">
+                <div class="input-group">
+                    <label for="username">username :</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <p class="message">{{ message }}</p>
+                <div class="button-group">
+                    <a class="register-link" href="{{ url_for('register') }}">register</a>
+                    <button class="login-button" type="submit">login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
